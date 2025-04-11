@@ -1,10 +1,17 @@
-# ClickHouse: Установка и запуск скрипта
+# 📊 ETF Аналитика с ClickHouse и Grafana
 
-Этот гайд поможет установить ClickHouse, запустить сервер и выполнить ваш SQL- или Python-скрипт.
+Этот проект собирает данные по ETF, сохраняет их в ClickHouse и отображает графики через Grafana.
 
 ---
 
-## 📦 Установка ClickHouse (Ubuntu / Debian)
+## 🔧 Требования
+
+- ClickHouse (сервер и клиент)
+- Grafana
+
+---
+
+## 🚀 Установка ClickHouse
 
 ```bash
 sudo apt-get update
@@ -15,9 +22,19 @@ echo "deb https://packages.clickhouse.com/deb stable main" | sudo tee /etc/apt/s
 
 sudo apt-get update
 sudo apt-get install -y clickhouse-server clickhouse-client
-
 sudo service clickhouse-server start
 
 project/
-├── etfs.sql         # SQL-файл с запросами
-├── README.md             # Инструкция
+├── etfs.sql               # SQL-файл для создания таблиц
+├── README.md
+
+Установи Grafana: https://grafana.com/grafana/download
+
+Открой интерфейс: http://localhost:3000
+
+Добавь источник данных:
+
+Тип: ClickHouse
+
+URL: http://localhost:8123
+
