@@ -14,15 +14,17 @@
 ## 🚀 Установка ClickHouse
 
 ```bash
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates dirmngr
+curl https://clickhouse.com/ | sh
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E0C56BD4
-echo "deb https://packages.clickhouse.com/deb stable main" | sudo tee /etc/apt/sources.list.d/clickhouse.list
+Successfully downloaded the ClickHouse binary, you can run it as:
+    ./clickhouse
 
-sudo apt-get update
-sudo apt-get install -y clickhouse-server clickhouse-client
-sudo service clickhouse-server start
+You can also install it:
+sudo ./clickhouse install
+
+./clickhouse server
+
+./clickhouse client
 
 project/
 ├── etfs.sql               # SQL-файл для создания таблиц
